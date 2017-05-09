@@ -1,0 +1,8 @@
+Stags Leap Artemis Cabernet;Red;2013;92;65;Stags;6150 Silverado Trail;Napa;CA;94558
+Silver Oak Cabernet;Red;2011;91;110;Silver Oak;915 Oakville Cross Rd;Oakville;CA;94562
+Joseph Phelps Insignia;Red;2013;97;240;Joseph Phphelps;200 Taplin Road;St. Helena;CA;94574
+Duckhorn Cabernet;Red;2013;93;72;Duckhorn;1000 Lodi Lan;St. Helena;CA;94574
+Alpha Omega Chardonnay;White;2012;92;69.99;Alpha Omega;1155 Mee Lane at Hwy 29;St. Helena;CA;94574
+Grgich Chardonnay;White;2013;90;43;Grgich;1829 St. Helena Hwy;Rutherford;CA;94573
+Stags Leap Chardonnay;White;2014;90;30;Stags;6150 Silverado Trail;Napa;CA;94558
+Pahlmeyer;White;2013;93;72.99;Pahlmeyer;811 St. Helena Hwy;St. Helena;CA;94574 
