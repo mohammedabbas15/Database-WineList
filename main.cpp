@@ -298,7 +298,7 @@ void wineYear()
 		y = yy;
 	}
 
-	ss << "Select * from wineInfo where vintage >= " << x << " and vintage <= " << y << " order by score DESC, price ASC;";
+	ss << "Select * from wineInfo where vintage >= " << x << " and vintage <= " << y << " order by vintage ASC, score DESC;";
 	sql_cmd = ss.str();
 
 	processCommandSQL(sql_cmd, wines);
@@ -331,7 +331,7 @@ void displayWinesList(List<Wine> &wines)
 	cout << "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl;
 
 	cout << "|" << setw(23);
-	cout << "Wine-Name" << setw(30) << "Vintage" << setw(8) << "Score" << setw(8) << "Price" << setw(6) << "Type" << " |" << endl;
+	cout << "Wine-Name" << setw(30) << "Type" << setw(8) << "Vintage" << setw(8) << "Score" << setw(6) << "Price" << " |" << endl;
 
 	cout << "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl;
 	 
@@ -347,11 +347,11 @@ void displayWinesList(List<Wine> &wines)
 		while(wine_name.size() < 42) wine_name += ' ';
 
 		cout << left << setw(4) << index_str << right << " " << wine_name << ' ' << setw(5) // Wine Name
+			<< wine.get_type() << setw(8) // Wine Type
 			<< wine.get_vintage() << setw(8) // Wine Vintage
 			<< wine.get_score() << setw(8) // Wine score
-			<< wine.get_price() << setw(8) // Wine Price
-			<< wine.get_type()                // Wine type
-		<< endl;
+			<< wine.get_price() << setw(8)  // Wine Price
+			<< endl;
 		index++;
 		currentPtr = currentPtr->getNextPtr();
       }
@@ -395,15 +395,16 @@ void processCommandSQL(string sql_command, List<Wine> &wines)
 		// Erase spaces from the end
 		while(wine_name[wine_name.size() - 1] == ' ') wine_name.erase(wine_name.begin() + (wine_name.size() - 1));
 
-		wine_vintage = atoi(row[1]);
-		wine_score = atoi(row[2]);
-		wine_price = atof(row[3]);
+		wine_type = row[1];
+		wine_vintage = atoi(row[2]);
+		wine_score = atoi(row[3]);
+		wine_price = atof(row[4]);
 
-		wine_type = (row[4]);
+		
 		// Erase spaces from the end
 		while(wine_type[wine_type.size() - 1] == ' ') wine_type.erase(wine_type.begin() + (wine_type.size() - 1));
 
-		wines.insertAtBack(Wine(wine_name, wine_vintage, wine_score, wine_price, wine_type), key); key++;
+		wines.insertAtBack(Wine(wine_name, wine_type, wine_vintage, wine_score, wine_price), key); key++;
       }
 
 	// Clean up the database result set
