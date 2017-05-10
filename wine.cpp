@@ -1,7 +1,7 @@
 #include "wine.h"
 
 // Wine constructor
-Wine::Wine(string new_name, int new_vintage, int new_rating, double new_price, string new_type)
+Wine::Wine(string new_name, string new_type, int new_vintage, int new_rating, double new_price)
 {
 	wine_price = new_price;
 	wine_name = new_name;
