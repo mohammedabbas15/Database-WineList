@@ -21,14 +21,15 @@ public:
 		wine_score = 0;
 		wine_vintage = 0;
 	}
-	Wine(string new_name, int new_vintage, int new_rating, double new_price, string new_type);
+	Wine(string new_name, string new_type, int new_vintage, int new_rating, double new_price);
 	void printInfo(ostream &os) const
 	{ 
 		os << "Name: "<< wine_name << ' ';
+		os << "Type: "<< wine_type;
 		os << "Vintage: "<< wine_vintage << ' ';
 		os << "Score: "<< wine_score << ' ';
 		os << "Price: "<< wine_price << ' ';
-		os << "Type: "<< wine_type;
+		
 	};
 	int get_vintage();
 	double get_price();
